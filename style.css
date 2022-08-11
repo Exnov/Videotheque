@@ -1,0 +1,60 @@
+
+body{
+	background-color: currentColor;
+}
+
+#title-app{
+	color: white;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: crimson;
+}
+
+#block-btns{
+	display: flex;
+	justify-content: end;
+	gap: 20px;
+	position: sticky;
+	top: 0;
+	padding: 10px;
+	z-index: 1;	
+	background: rgba(95, 158, 160, 0.5);
+}
+
+#block-btns p{
+	margin-top: 0.5rem;
+}
+
+#block-btns button{
+	width: 5rem;
+}
+
+#block-btns button:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.container{
+	margin-top: 40px;
+}
+
+#videotheque{
+	margin-top: 25px;
+}
+
+.videos{
+	background-color: currentColor;
+	margin-bottom: 20px;
+	max-width:inherit !important;
+}
+
+.videoCategory{
+	background: cadetblue;
+	color: white;
+	padding: 10px;
+}
+
+video{
+	align-self: center;
+}
