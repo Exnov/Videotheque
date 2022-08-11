@@ -1,22 +1,22 @@
 # Videotheque - Application Web
 
 ## Pour quoi faire ?
-Parcourez et regardez vos vidéos persos à partir de votre navigateur. 
+Parcourez et regardez vos vidéos persos depuis votre navigateur. 
 
 ![Capture 1](./captures/01.JPG)
 
 ## Comment ça marche ?
 - Vous téléchargez d'abord le programme sur votre machine.
-- Vous collez ensuite vos vidéos au format .mp4 dans le dossier "videos" selon une logique de rangement précise, et un zeste de code ; que je vous explique après.
+- Vous collez ensuite vos vidéos au format mp4 dans le dossier "videos" selon une logique de rangement précise, et un zeste de code ; que je vous explique après.
 - Enfin, vous cliquez sur le fichier index.html pour lancer l'application dans votre navigateur.
 
-Une fois là, parcourez et regardez vos vidéos, et modifiez leur taille selon vos préférences de visionnage. 
+Une fois dessus, parcourez et regardez vos vidéos, et modifiez leur taille selon vos préférences de visionnage. 
 
 
 ## Les outils indispensables : npm et Babel 
-Videotheque est une application React. Pour que l'appli affiche votre vidéos dans votre navigateur, vous devrez faire un tout petit peu de JSX, et convertir ce JSX en Javascript.
+Videotheque est une application React. Pour que l'appli affiche vos vidéos dans votre navigateur, vous devrez faire un tout petit peu de JSX, et convertir ce JSX en Javascript.
 
-C'est là qu'entre en jeu Babel, et npm, puisque le gestionnaire de paquets Javascript appellera pour vous Babel, et lui demandera de traduire le code JSX (que vous écrirez dans les fichiers du dossier src), 
+C'est là qu'entrent en jeu Babel, et npm, puisque le gestionnaire de paquets Javascript appellera pour vous Babel, et lui demandera de traduire le code JSX (que vous écrirez dans les fichiers du dossier src), 
 en Javascript (cf les fichiers du dossier lib récupérés par index.html).
 
 Je vous explique après la partie codage et ligne de commandes (cf Logique de rangement des vidéos). Je vous dis d'abord comment avoir ces outils (npm et Babel) sur son ordi.
@@ -31,7 +31,7 @@ Vous pouvez maintenant utiliser Babel et bidouiller tranquillement l'appli avec 
 Il faut respecter un ordre de rangement des vidéos, et convoquer Babel, pour afficher vos vidéos sur l'application web.
 
 ### Organisation des vidéos :
-Tout se passe dans le dossier "video".
+Tout se passe dans le dossier "videos".
 
 Là-bas vous créez autant de dossiers que vous voulez. Ces dossiers contiendront vos vidéos. 3 points à observer :
 - Le nom de ces dossiers est important dans la mesure où il sera repris dans le code.
@@ -45,15 +45,16 @@ Pour être plus clair, je vous glisse la capture suivante où j'ai rangé 3 vid�
 ### Signalez à l'application l'ajout de nouvelles vidéos :
 Pour que vos vidéos apparaissent sur la page web, vous devez signaler à l'application l'ajout de vos vidéos dans le dossier "videos".
 
-Pour ça, direction le fichier Videotheque.js du dossier "src". Vous allez dans la méthode renderVideotheque(), et compléter le "dictionnaire" (tableau d'objets si vous préférez) nommé clips . Vous ajoutez à cette variable 
-autant d'objets que vous avez ajouté de dossiers dans le dossier "video".
+Pour ça, direction le fichier Videotheque.js du dossier "src". Vous allez dans la méthode renderVideotheque(), et vous complétez le "dictionnaire" (tableau d'objets si vous préférez) nommé clips. Vous ajoutez à cette variable autant d'objets que vous avez ajouté de dossiers dans le dossier "videos".
 
-Chaque objet a des clefs qu'il vous faudra compléter :
-- 'name' aura pour valeur un string, correspondant au nom affiché sur la page web : "Muse" pour moi, avec mes 2 vidéos de ce groupe.
-- 'repo' aura pour valeur un string, correspondant au nom du dossier qui contient des vidéos : "muse" pour moi, contient mes 2 vidéos du trio britannique.
-- 'nVideos' aura pour valeur un int, correspondant au nombre de vidéos contenus dans un dossier : 2 vidéos pour moi, dans mon dossier "muse"
+Chacun de ces objets représente donc les dossiers qui contiennent vos vidéos.
 
-Pour être plus claire, je vous glisse une autre capture avec mes vidéos de musique :
+Chaque objet dans clips comporte 4 clefs qui renseignent l'appli pour s'y retrouver dans vos vidéos ; 3 de ces clefs auront besoin de vos services pour avoir une valeur :
+- 'name' aura pour valeur un string, correspondant au nom affiché sur la page web pour un dossier de vidéos : "Muse" pour mes 2 vidéos de ce groupe. Et aussi "RHCP" pour ma vidéo des Red Hot. Avec cette clef, vous pouvez choisir la valeur string que vous voulez.
+- 'repo' aura pour valeur un string, correspondant au nom d'un dossier de vidéos : "muse" contient mes 2 vidéos du trio britannique. Et le dossier "rhcp", celle des Red Hot.
+- 'nVideos' aura pour valeur un int, correspondant au nombre de vidéos contenus dans un dossier de vidéos : 2 vidéos dans mon dossier "muse". Et 1 vidéo pour le dossier "rhcp".
+
+Pour être plus clair, je vous glisse une autre capture :
 
 ![Capture 3](./captures/03.JPG)
 
@@ -65,7 +66,7 @@ La commande pour ça :
 npm run build
 ```
 ## Des idées d'amélioration :
-Ajoutez des titres aux vidéos, permettre l'intégration de vidéos autres des .mp4, modifiez la logique de rangement des vidéos pour conserver les noms d'origine de vos vidéos, ou encore changez l'apparence de l'appli...
+Ajouter des titres aux vidéos, permettre l'intégration de vidéos autres que des mp4, modifier la logique de rangement des vidéos pour conserver les noms d'origine de vos vidéos, ajouter un explorateur de fichiers pour automatiser et simplifier l'intégration de vidéos, ou encore changer l'apparence de l'appli...
 
 
 
